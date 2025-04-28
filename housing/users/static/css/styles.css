@@ -1,0 +1,249 @@
+:root {
+    --primary: #8E44AD;
+    --accent: #F39C12;
+    --bg: #FCF3CF;
+    --text: #2C3E50;
+    --highlight: #E74C3C;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
+}
+
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    color: var(--primary) !important;
+    font-weight: 700;
+}
+
+.nav-link {
+    color: var(--text) !important;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.btn-highlight {
+    background-color: var(--highlight);
+    border-color: var(--highlight);
+    color: white;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 0;
+}
+
+.feature-card {
+    transition: transform 0.3s;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.feature-card .price {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+footer {
+    background-color: var(--text);
+    color: white;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.social-icon:hover {
+    color: var(--accent);
+}
+
+/* Login/Register Modal */
+.auth-tabs .nav-link {
+    color: var(--text) !important;
+}
+
+.auth-tabs .nav-link.active {
+    color: var(--primary) !important;
+    font-weight: bold;
+}
+:root {
+    --primary: #8E44AD;
+    --accent: #F39C12;
+    --bg: #FCF3CF;
+    --text: #2C3E50;
+    --highlight: #E74C3C;
+}
+
+.register-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.register-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.register-header h2 {
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.register-header p {
+    color: var(--text);
+    opacity: 0.8;
+}
+
+.register-form .form-group {
+    margin-bottom: 20px;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.register-form .input-with-icon {
+    position: relative;
+}
+
+.register-form .input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+}
+
+.register-form input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.register-form input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.2);
+}
+
+.btn-register {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-register:hover {
+    background-color: #7d3b98;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    color: var(--text);
+}
+
+.login-link a {
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.password-strength {
+    height: 5px;
+    background: #eee;
+    border-radius: 5px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.strength-meter {
+    height: 100%;
+    width: 0%;
+    background: #e74c3c;
+    transition: all 0.3s;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.terms-agreement {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.terms-agreement input {
+    width: auto;
+    margin-right: 10px;
+}
+
+.error-message {
+    color: var(--highlight);
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .register-container {
+        padding: 30px 20px;
+        margin: 20px auto;
+    }
+}

@@ -1,0 +1,61 @@
+{% extends "account/base.html" %}
+
+{% block title %}My Properties | LuxuryHomes{% endblock %}
+
+{% block content %}
+<div class="dashboard-header">
+    <h3>My Properties</h3>
+    <a href="" class="btn btn-primary">
+        <i class="fas fa-plus me-2"></i>Add Property
+    </a>
+</div>
+
+            <!-- My Properties -->
+            <div class="dashboard-card">
+                <h4 class="card-title"><i class="fas fa-home me-2"></i>My Listed Properties</h4>
+                <div class="property-list">
+                    <!-- Property 1 -->
+                    <div class="property-card">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="property-img">
+                        <div class="property-body">
+                            <h5>Modern Luxury Villa</h5>
+                            <p class="text-muted">Beverly Hills, CA</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="property-price">$1,250,000</span>
+                                <span class="badge-status">Active</span>
+                            </div>
+                            <div class="mt-3 d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary w-100">Edit</button>
+                                <button class="btn btn-sm btn-outline-danger w-100">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Property 2 -->
+                    <div class="property-card">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="property-img">
+                        <div class="property-body">
+                            <h5>Downtown Penthouse</h5>
+                            <p class="text-muted">Manhattan, NY</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="property-price">$2,800,000</span>
+                                <span class="badge-status">Pending</span>
+                            </div>
+                            <div class="mt-3 d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary w-100">Edit</button>
+                                <button class="btn btn-sm btn-outline-danger w-100">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add Property Card -->
+                    <div class="property-card d-flex align-items-center justify-content-center" style="border: 2px dashed #ddd;">
+                        <div class="text-center p-4">
+                            <i class="fas fa-plus-circle fa-3x text-muted mb-3"></i>
+                            <h5>Add New Property</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+{% endblock %}

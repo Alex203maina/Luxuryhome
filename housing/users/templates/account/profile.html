@@ -1,0 +1,112 @@
+{% extends "account/base.html" %}
+
+{% block title %}Profile Settings | LuxuryHomes{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-header">
+    <h3>Profile Settings</h3>
+</div>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+
+<!-- Personal Information -->
+<div class="dashboard-card mb-4">
+    <form method="post" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        <h4 class="card-title"><i class="fas fa-user me-2"></i> Personal Information</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" class="form-control" name="first_name" value="{{ request.user.first_name }}" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" class="form-control" name="last_name" value="{{ request.user.last_name }}" required>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+    </form>
+</div>
+
+<!-- Password Change -->
+<div class="dashboard-card mb-4">
+    <h4 class="card-title"><i class="fas fa-lock me-2"></i> Change Password</h4>
+    <form method="post" action="{% url 'password_change' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="old_password">Current Password</label>
+            <input type="password" class="form-control" name="old_password" id="old_password" required>
+        </div>
+        <div class="form-group">
+            <label for="new_password1">New Password</label>
+            <input type="password" class="form-control" name="new_password1" id="new_password1" required>
+        </div>
+        <div class="form-group">
+            <label for="new_password2">Confirm New Password</label>
+            <input type="password" class="form-control" name="new_password2" id="new_password2" required>
+
+        </div>
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                <strong>Error!</strong> Please correct the errors below.
+                <ul>
+                    {% for field, errors in form.errors.items %}
+                        {% for error in errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        {% if password_change_form.non_field_errors %}
+            <div class="alert alert-danger">
+                <strong>Error!</strong> {{ password_change_form.non_field_errors }}
+            </div>
+        {% endif %}
+        {% if password_change_form.success %}
+            <div class="alert alert-success">
+                <strong>Success!</strong> Your password has been changed.
+            </div>
+        {% endif %}
+        {% if password_change_form.error_messages %}
+            <div class="alert alert-danger">
+                <strong>Error!</strong> {{ password_change_form.error_messages }}
+            </div>
+        {% endif %}
+        
+        <button type="submit" class="btn btn-primary mt-3">Update Password</button>
+    </form>
+</div>
+
+<!-- Notification Preferences -->
+<div class="dashboard-card">
+    <h4 class="card-title"><i class="fas fa-cog me-2"></i> Notification Preferences</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                <label class="form-check-label" for="emailNotifications">Email Notifications</label>
+            </div>
+            <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" id="smsNotifications">
+                <label class="form-check-label" for="smsNotifications">SMS Notifications</label>
+            </div>
+            <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" id="promoEmails" checked>
+                <label class="form-check-label" for="promoEmails">Promotional Emails</label>
+            </div>
+            <button class="btn btn-outline-primary">Save Preferences</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
